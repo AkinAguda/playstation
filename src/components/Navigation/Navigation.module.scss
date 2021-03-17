@@ -1,0 +1,103 @@
+.container {
+    width: var(--width);
+    max-width: var(--max-width);
+    height: var(--nav-height);
+    margin: 0 auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style-type: none;
+    font-size: 13px;
+    & > :nth-child(1) {
+        a {
+            margin-left: 0;
+        }
+    }
+    & > :last-child {
+        a {
+            margin-right: 0;
+        }
+    }
+    a {
+        text-decoration: none;
+        color: inherit;
+        margin: 0 16px;
+    }
+}
+
+.avatar {
+    height: 40px;
+    width: 40px;
+}
+
+.avatarContainer {
+    height: 40px;
+    width: 40px;
+    position: relative;
+    .status {
+        height: 12px;
+        width: 12px;
+        border-radius: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-color: #00CECE;
+    }
+}
+
+.userInfo {
+    display: flex;
+}
+
+@mixin triggerStyles {
+    $height: 20px;
+    $width: 17px;
+    height: $height;
+    width: $width;
+    background-color: transparent;
+    border: none;
+    margin-top: 7px;
+    margin-left: 32px;
+    cursor: pointer;
+    padding: 0;
+    svg {
+        width: $width;
+        height: $height;
+    }
+}
+
+.notificationTrigger {
+    @include triggerStyles
+}
+
+.settingsTrigger {
+    $width: 20px;
+    @include triggerStyles
+}
+
+.playerDetail {
+    margin-left: 16px;
+}
+
+.username {
+    font-size: 13px;
+}
+
+.badges {
+    margin-top: 5px;
+    img {
+        height: 15px;
+        width: 15px;
+    }
+    > :nth-child(even) {
+        margin: 0 8px;
+    }
+}

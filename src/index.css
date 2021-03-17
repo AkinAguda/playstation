@@ -1,3 +1,13 @@
+@font-face {
+  font-family: monsterrat-regular;
+  src: url(./assets/fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
+@font-face {
+  font-family: monsterrat-bold;
+  src: url(./assets/fonts/Montserrat/Montserrat-Medium.ttf);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +15,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  font-family: monsterrat-regular;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+:root {
+  --width: 90vw;
+  --max-width: 1200px;
+  --nav-height: 120px;
+  --blue-1: #2572FF;
+  --blue-2: #0053E9;
 }
