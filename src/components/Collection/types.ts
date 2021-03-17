@@ -1,12 +1,10 @@
 import { UseCarouselType } from "../common/Carousel/types";
+import { GameData } from "../../redux/App/types";
 
 export interface CollectionViewProps {
   carouselInstance: UseCarouselType;
-  imgData: {
-    src: string;
-    alt: string;
-  }[];
-  activeIndex: number;
+  games: GameData[];
+  selectedINdex: number;
   //   rightScrollHandler: (
   //     e: React.MouseEvent<HTMLButtonElement, MouseEvent>
   //   ) => void;

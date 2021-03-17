@@ -1,0 +1,48 @@
+import { GameData, Theme } from "./types";
+
+export const games: GameData[] = [
+  {
+    name: "Call of Duty Black Ops: Cold War",
+    coverArtUrl: "images/codbo.jpg",
+    playtime: 15190,
+    progression: 31,
+    genre: ["action"],
+    title: "KingKiller",
+    titleUrl: "images/target.png",
+    wallpaperUrl: "images/codbo-wp.jpg",
+    theme: Theme.DARK,
+  },
+  {
+    name: "Ghost of Tsushima",
+    coverArtUrl: "images/ghost.jpg",
+    playtime: 15190,
+    progression: 62,
+    genre: ["action", "adventure"],
+    title: "Ronin",
+    titleUrl: "images/buddah.png",
+    wallpaperUrl: "images/ghost-wp.jpg",
+    theme: Theme.DARK,
+  },
+  {
+    name: "God of War",
+    coverArtUrl: "images/gow.jpg",
+    playtime: 15190,
+    progression: 80,
+    genre: ["action", "adventure"],
+    title: "God Slayer",
+    titleUrl: "images/skull.png",
+    wallpaperUrl: "images/gow-wp.jpg",
+    theme: Theme.DARK,
+  },
+  {
+    name: "The Witcher III: Wild Hunt",
+    coverArtUrl: "images/witcher.jpg",
+    playtime: 15190,
+    progression: 77,
+    genre: ["action", "adventure", "puzzle"],
+    title: "Wolfblood",
+    titleUrl: "images/wolf.png",
+    wallpaperUrl: "images/witcher-wp.jpg",
+    theme: Theme.DARK,
+  },
+];

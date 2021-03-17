@@ -6,8 +6,8 @@ import classes from "./Collection.module.scss";
 
 const Collection: React.FC<CollectionViewProps> = ({
   carouselInstance,
-  imgData,
-  activeIndex,
+  games,
+  selectedINdex,
 }) => (
   <div className={classes.container}>
     <Carousel
@@ -15,33 +15,19 @@ const Collection: React.FC<CollectionViewProps> = ({
       itemWidth={270}
       showClipped={true}
     >
-      {imgData.map(({ src, alt }, index) => (
+      {games.map(({ coverArtUrl, name }, index) => (
         <div
           className={mergeClasses(classes.gameWrapper, [
-            activeIndex === index,
+            selectedINdex === index,
             classes.selected,
           ])}
+          key={name}
         >
           <button className={classes.gameTrigger}>
-            <img src={src} alt={alt} />
+            <img src={coverArtUrl} alt={name} />
           </button>
         </div>
       ))}
-      {/* <div className={classes.gameWrapper}>
-        <button className={classes.gameTrigger}>
-          <img src="images/ghost.jpg" alt="ghost" />
-        </button>
-      </div>
-      <div className={classes.gameWrapper}>
-        <button className={classes.gameTrigger}>
-          <img src="images/gow.jpg" alt="god of war" />
-        </button>
-      </div>
-      <div className={classes.gameWrapper}>
-        <button className={classes.gameTrigger}>
-          <img src="" alt="Witcher" />
-        </button>
-      </div> */}
     </Carousel>
   </div>
 );
