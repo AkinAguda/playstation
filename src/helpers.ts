@@ -16,3 +16,8 @@ export const mergeClasses = (...args: any) => {
     return `${accumulator ? `${accumulator} ` : ""}${currentValue}`;
   }, "");
 };
+
+export const playNavigationAudio = () => {
+  const navAudio = new Audio("/audio/navigation.mp3");
+  navAudio.play();
+};

@@ -21,6 +21,7 @@ export interface GameData {
   titleUrl: string;
   wallpaperUrl: string;
   theme: Theme;
+  audioUrl?: string;
 }
 
 export enum Theme {

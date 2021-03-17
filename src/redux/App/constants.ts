@@ -11,6 +11,7 @@ export const games: GameData[] = [
     titleUrl: "images/target.png",
     wallpaperUrl: "images/codbo-wp.jpg",
     theme: Theme.DARK,
+    audioUrl: "audio/cod.mp3",
   },
   {
     name: "Ghost of Tsushima",
@@ -22,6 +23,7 @@ export const games: GameData[] = [
     titleUrl: "images/buddah.png",
     wallpaperUrl: "images/ghost-wp.jpg",
     theme: Theme.DARK,
+    audioUrl: "audio/ghost.mp3",
   },
   {
     name: "God of War",
@@ -32,7 +34,8 @@ export const games: GameData[] = [
     title: "God Slayer",
     titleUrl: "images/skull.png",
     wallpaperUrl: "images/gow-wp.jpg",
-    theme: Theme.DARK,
+    theme: Theme.LIGHT,
+    audioUrl: "audio/gow.mp3",
   },
   {
     name: "The Witcher III: Wild Hunt",
@@ -44,5 +47,6 @@ export const games: GameData[] = [
     titleUrl: "images/wolf.png",
     wallpaperUrl: "images/witcher-wp.jpg",
     theme: Theme.DARK,
+    audioUrl: "audio/witcher.mp3",
   },
 ];
