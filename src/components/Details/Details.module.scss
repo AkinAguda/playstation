@@ -1,0 +1,33 @@
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: var(--width);
+}
+
+.name {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+.stats {
+  display: flex;
+  & > :nth-child(2) {
+    margin: 0 48px;
+  }
+}
+
+.statBox {
+  & > :nth-child(1) {
+    font-size: 14px;
+    margin-bottom: 16px;
+    color: #e6e6e6;
+  }
+  & > :nth-child(2) {
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    img {
+      margin-left: 8px;
+    }
+  }
+}
