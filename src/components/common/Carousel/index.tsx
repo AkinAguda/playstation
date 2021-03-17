@@ -21,6 +21,7 @@ const CarouselContainer: React.FC<CarouselProps> = ({
   numberToShow = 1,
   carouselInstance,
   itemWidth,
+  showClipped,
 }) => {
   const transform = useRef(0);
   const transformCount = useRef(0);
@@ -70,7 +71,12 @@ const CarouselContainer: React.FC<CarouselProps> = ({
   }, [carouselInstance, scrollRight, scrollLeft]);
 
   return (
-    <Carousel refs={refs} windowRef={windowRef} containerRef={containerRef}>
+    <Carousel
+      refs={refs}
+      windowRef={windowRef}
+      containerRef={containerRef}
+      showClipped={showClipped}
+    >
       {children}
     </Carousel>
   );

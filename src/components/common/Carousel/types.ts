@@ -7,6 +7,7 @@ export interface CarouselViewProps {
   children: ChildrenType;
   windowRef: React.RefObject<HTMLDivElement>;
   containerRef: React.RefObject<HTMLDivElement>;
+  showClipped?: boolean;
 }
 
 export type ChildrenType =
@@ -20,6 +21,7 @@ export interface CarouselProps {
   numberToShow?: number;
   carouselInstance: UseCarouselType;
   itemWidth: number;
+  showClipped?: boolean;
 }
 
 export interface CarouselData {

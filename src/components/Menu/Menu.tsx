@@ -18,7 +18,7 @@ const Menu: React.FC<MenuViewProps> = ({
       </button>
 
       <Carousel
-        numberToShow={3}
+        numberToShow={6}
         carouselInstance={carouselInstance}
         itemWidth={110}
       >
