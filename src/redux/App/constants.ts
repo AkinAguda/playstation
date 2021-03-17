@@ -49,4 +49,16 @@ export const games: GameData[] = [
     theme: Theme.DARK,
     audioUrl: "audio/witcher.mp3",
   },
+  {
+    name: "Naruto Shippuden: Ultimate Ninja Storm 4",
+    coverArtUrl: "images/naruto.jpg",
+    playtime: 15190,
+    progression: 77,
+    genre: ["action", "adventure"],
+    title: "Wolfblood",
+    titleUrl: "images/wolf.png",
+    wallpaperUrl: "images/naruto-wp.jpg",
+    theme: Theme.DARK,
+    audioUrl: "audio/naruto.mp3",
+  },
 ];

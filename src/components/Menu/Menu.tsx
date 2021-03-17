@@ -18,7 +18,7 @@ const Menu: React.FC<MenuViewProps> = ({
       </button>
 
       <Carousel
-        numberToShow={6}
+        numberToShow={3}
         carouselInstance={carouselInstance}
         itemWidth={110}
       >
@@ -27,8 +27,6 @@ const Menu: React.FC<MenuViewProps> = ({
         <button className={classes.menuItem}>Adventure</button>
         <button className={classes.menuItem}>Action</button>
         <button className={classes.menuItem}>Puzzle</button>
-        <button className={classes.menuItem}>Racing</button>
-        <button className={classes.menuItem}>Music</button>
       </Carousel>
 
       <button className={classes.forward} onClick={rightScrollHandler}>

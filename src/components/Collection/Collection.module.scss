@@ -1,43 +1,46 @@
 .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    width: var(--width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  width: var(--width);
+  padding-bottom: 100px;
 }
 
 .gameWrapper {
-    margin-top: 120px;
+  margin-top: 120px;
 }
 
 .gameTrigger {
-    $width: 270px;
-    $height: 250px;
-    width: $width;
-    height: $height;
+  $width: 270px;
+  $height: 250px;
+  width: $width;
+  height: $height;
+  border: none;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:active {
     border: none;
-    background-color: transparent;
+  }
+  img {
+    height: 250px;
+    width: 230px;
     border-radius: 20px;
-    padding: 0 20px;
-    box-sizing: border-box;
-    cursor: pointer;
-    &:focus {
-        outline: none;
-    }
-    &:active {
-        border: none;
-    }
-    img {
-        height: 250px;
-        width: 230px;
-        border-radius: 20px;
-    }
+  }
 }
 .selected {
-    padding-right: 45px;
-    padding-left: 45px;
-    transition: 0.1s ease-out;
-    transform: scale(1.5);
-    img {
-        box-shadow: 0px 24px 32px rgba(0, 83, 233, 0.14), 0px 16px 24px rgba(0, 83, 233, 0.1), 0px 2px 6px rgba(0, 83, 233, 0.08), 0px 0px 1px rgba(0, 0, 0, 0.04);
-        border: 1px solid var(--blue-2);
-    }
+  padding-right: 45px;
+  padding-left: 45px;
+  transition: 0.1s ease-out;
+  transform: scale(1.5);
+  img {
+    box-shadow: 0px 24px 32px rgba(0, 83, 233, 0.14),
+      0px 16px 24px rgba(0, 83, 233, 0.1), 0px 2px 6px rgba(0, 83, 233, 0.08),
+      0px 0px 1px rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--blue-2);
+  }
 }
