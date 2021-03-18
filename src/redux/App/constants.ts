@@ -16,7 +16,7 @@ export const games: GameData[] = [
   {
     name: "Ghost of Tsushima",
     coverArtUrl: "images/ghost.jpg",
-    playtime: 15190,
+    playtime: 35190,
     progression: 62,
     genre: ["action", "adventure"],
     title: "Ronin",
@@ -28,7 +28,7 @@ export const games: GameData[] = [
   {
     name: "God of War",
     coverArtUrl: "images/gow.jpg",
-    playtime: 15190,
+    playtime: 55190,
     progression: 80,
     genre: ["action", "adventure"],
     title: "God Slayer",
@@ -40,7 +40,7 @@ export const games: GameData[] = [
   {
     name: "The Witcher III: Wild Hunt",
     coverArtUrl: "images/witcher.jpg",
-    playtime: 15190,
+    playtime: 45190,
     progression: 77,
     genre: ["action", "adventure", "puzzle"],
     title: "Wolfblood",
@@ -52,11 +52,11 @@ export const games: GameData[] = [
   {
     name: "Naruto Shippuden: Ultimate Ninja Storm 4",
     coverArtUrl: "images/naruto.jpg",
-    playtime: 15190,
-    progression: 77,
+    playtime: 75190,
+    progression: 90,
     genre: ["action", "adventure"],
-    title: "Wolfblood",
-    titleUrl: "images/wolf.png",
+    title: "Anbu",
+    titleUrl: "images/anbu.png",
     wallpaperUrl: "images/naruto-wp.jpg",
     theme: Theme.DARK,
     audioUrl: "audio/naruto.mp3",
