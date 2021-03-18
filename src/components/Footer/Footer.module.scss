@@ -1,0 +1,37 @@
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-family: monsterrat-bold;
+  width: var(--width);
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 40px;
+}
+
+.add {
+  height: 70px;
+  width: 286px;
+  display: flex;
+  border-radius: 100px;
+  background-color: var(--blue-1);
+  border: none;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  svg {
+    margin-right: 16px;
+  }
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  svg {
+    margin-right: 16px;
+  }
+}
