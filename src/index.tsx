@@ -1,15 +1,42 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import logger from "redux-logger";
-import { createStore, applyMiddleware } from "redux";
+// import logger from "redux-logger";
+import {
+  createStore,
+  // applyMiddleware
+} from "redux";
 import { Provider } from "react-redux";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+// import * as serviceWorker from "./service-worker.js";
+import { fetchStaticFiles } from "./helpers";
 
 import rootReducer from "./redux";
 
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer);
+// const store = createStore(rootReducer, applyMiddleware(logger));
+
+fetchStaticFiles().then(() => {
+  const loader = document.getElementById("loader");
+  const body = document.querySelector("body");
+  loader!.style.opacity = "0";
+  setTimeout(() => {
+    body!.style.overflowY = "scroll";
+    loader!.style.display = "none";
+  }, 300);
+});
+
+// useEffect(() => {
+// if ("serviceWorker" in navigator) {
+//   window.addEventListener("load", () => {
+//     navigator.serviceWorker.register("service-worker.js").then(() => {
+//       console.log("reg success");
+//     });
+//   });
+// }
+// }, []);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +46,8 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById("root")
 );
+
+serviceWorkerRegistration.register();
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
