@@ -1,3 +1,5 @@
+import { assets } from "./constants";
+
 /**
  * This function allows you to combine sevral classNames together.
  * For conditional classes, just pass in the condition (boolean)
@@ -33,3 +35,6 @@ export const secondsToHms = (d: number) => {
   const sDisplay = s > 0 ? s + (s === 1 ? " s" : " s") : "";
   return hDisplay + mDisplay + sDisplay;
 };
+
+export const fetchStaticFiles = () =>
+  Promise.all(Object.values(assets).map((url) => fetch(url)));

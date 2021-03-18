@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { ApplicationStore } from "../../redux/types";
 import { Theme } from "../../redux/App/types";
+import { fetchStaticFiles } from "../../helpers";
 import Background from "./Background";
 
 const getBackgroundBlend = (theme: Theme) => {
@@ -25,6 +26,18 @@ const BackgroundContainer: React.FC = () => {
     backgroundImage: `url(${games[selectedIndex].wallpaperUrl})`,
     ...getBackgroundBlend(games[selectedIndex].theme),
   };
+
+  useEffect(() => {
+    fetchStaticFiles().then(() => {
+      const loader = document.getElementById("loader");
+      const body = document.querySelector("body");
+      loader!.style.opacity = "0";
+      setTimeout(() => {
+        body!.style.overflowY = "scroll";
+        loader!.style.display = "none";
+      }, 300);
+    });
+  }, []);
 
   useEffect(() => {
     if (background.current?.classList.contains("zoom")) {
