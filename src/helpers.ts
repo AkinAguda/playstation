@@ -38,3 +38,5 @@ export const secondsToHms = (d: number) => {
 
 export const fetchStaticFiles = () =>
   Promise.all(Object.values(assets).map((url) => fetch(url)));
+
+export const pageLoading = () => !!document.getElementById("loader");

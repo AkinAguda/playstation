@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import { ApplicationStore } from "../../redux/types";
 import { Theme } from "../../redux/App/types";
+import { pageLoading } from "../../helpers";
 import Background from "./Background";
 
 const getBackgroundBlend = (theme: Theme) => {
@@ -34,8 +35,10 @@ const BackgroundContainer: React.FC = () => {
       background.current?.classList.add("zoom");
     }, 100);
     let gameAudio: HTMLAudioElement;
-    gameAudio = new Audio(games[selectedIndex].audioUrl);
-    gameAudio.play();
+    if (!pageLoading()) {
+      gameAudio = new Audio(games[selectedIndex].audioUrl);
+      gameAudio.play();
+    }
     return () => {
       if (gameAudio) {
         gameAudio.pause();

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { useCarousel } from "../common/Carousel";
 import { ApplicationStore } from "../../redux/types";
 import { setSelectedIndex } from "../../redux/App/actionCreators";
-import { playNavigationAudio } from "../../helpers";
+import { playNavigationAudio, pageLoading } from "../../helpers";
 import Collection from "./Collection";
 
 const CollectionContainer: React.FC = () => {
@@ -20,15 +20,18 @@ const CollectionContainer: React.FC = () => {
 
   useEffect(() => {
     document.onkeydown = (e) => {
-      if (e.key === "ArrowRight") {
-        if (selectedIndex + 1 !== games.length)
-          dispatch(setSelectedIndex(selectedIndex + 1));
-        carouselInstance.carouselData?.scrollRight();
-        onNavMove();
-      } else if (e.key === "ArrowLeft") {
-        if (selectedIndex !== 0) dispatch(setSelectedIndex(selectedIndex - 1));
-        carouselInstance.carouselData?.scrollLeft();
-        onNavMove();
+      if (!pageLoading()) {
+        if (e.key === "ArrowRight") {
+          if (selectedIndex + 1 !== games.length)
+            dispatch(setSelectedIndex(selectedIndex + 1));
+          carouselInstance.carouselData?.scrollRight();
+          onNavMove();
+        } else if (e.key === "ArrowLeft") {
+          if (selectedIndex !== 0)
+            dispatch(setSelectedIndex(selectedIndex - 1));
+          carouselInstance.carouselData?.scrollLeft();
+          onNavMove();
+        }
       }
     };
   }, [
