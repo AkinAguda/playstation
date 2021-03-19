@@ -18,7 +18,7 @@ import rootReducer from "./redux";
 const store = createStore(rootReducer);
 // const store = createStore(rootReducer, applyMiddleware(logger));
 
-const showContent = () => {
+const showContent = (noFetch?: boolean) => {
   const hideLoader = () => {
     const loader = document.getElementById("loader");
     const body = document.querySelector("body");
@@ -28,7 +28,8 @@ const showContent = () => {
       loader!.style.display = "none";
     }, 300);
   };
-  fetchStaticFiles().then(hideLoader).catch(hideLoader);
+  if (!noFetch) fetchStaticFiles().then(hideLoader).catch(hideLoader);
+  if (noFetch) hideLoader();
 };
 
 ReactDOM.render(
@@ -41,8 +42,9 @@ ReactDOM.render(
 );
 
 serviceWorkerRegistration.register({
-  onSuccess: showContent,
-  onUpdate: showContent,
+  onSuccess: () => showContent,
+  onUpdate: () => showContent,
+  onNoSw: () => showContent(true),
 });
 
 // If you want to start measuring performance in your app, pass a function
