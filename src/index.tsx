@@ -42,8 +42,8 @@ ReactDOM.render(
 );
 
 serviceWorkerRegistration.register({
-  onSuccess: () => showContent,
-  onUpdate: () => showContent,
+  onSuccess: () => showContent(),
+  onUpdate: () => showContent(),
   onNoSw: () => showContent(true),
 });
 
