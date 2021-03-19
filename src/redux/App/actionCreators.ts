@@ -1,5 +1,10 @@
 import { ActionCreator } from "redux";
-import { SetSelectedIndex } from "./types";
+import {
+  SetSelectedIndex,
+  SetFilter,
+  GameGenres,
+  GameCategories,
+} from "./types";
 import * as actionTypes from "./actionTypes";
 
 export const setSelectedIndex: ActionCreator<SetSelectedIndex> = (
@@ -9,4 +14,13 @@ export const setSelectedIndex: ActionCreator<SetSelectedIndex> = (
     index,
   },
   type: actionTypes.APP_SET_SELECTED_INDEX,
+});
+
+export const setFilter: ActionCreator<SetFilter> = (
+  filter: GameCategories | GameGenres
+) => ({
+  payload: {
+    filter,
+  },
+  type: actionTypes.APP_SET_FILTER,
 });

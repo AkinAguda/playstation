@@ -1,7 +1,9 @@
 import React from "react";
 import { ReactComponent as BackArrow } from "../../assets/images/svg/back.svg";
 import { ReactComponent as ForwardArrow } from "../../assets/images/svg/forward.svg";
+import { GameCategories, GameGenres } from "../../redux/App/types";
 import { MenuViewProps } from "./types";
+import MenuItem from "./MenuItem";
 import Carousel from "../common/Carousel";
 import classes from "./Menu.module.scss";
 
@@ -22,11 +24,10 @@ const Menu: React.FC<MenuViewProps> = ({
         carouselInstance={carouselInstance}
         itemWidth={110}
       >
-        <button className={classes.menuItem}>All</button>
-        <button className={classes.menuItem}>Sports</button>
-        <button className={classes.menuItem}>Adventure</button>
-        <button className={classes.menuItem}>Action</button>
-        <button className={classes.menuItem}>Puzzle</button>
+        <MenuItem filter={GameCategories.all}>All</MenuItem>
+        <MenuItem filter={GameGenres.adventure}>Adventure</MenuItem>
+        <MenuItem filter={GameGenres.action}>Action</MenuItem>
+        <MenuItem filter={GameGenres.puzzle}>Puzzle</MenuItem>
       </Carousel>
 
       <button className={classes.forward} onClick={rightScrollHandler}>

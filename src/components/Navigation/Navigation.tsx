@@ -21,7 +21,7 @@ const Navigation: React.FC = () => (
         <a href="https://github.com/AkinAguda">Developer</a>
       </li>
       <li>
-        <a href="/">Designer</a>
+        <a href="https://dribbble.com/413thKnight">Designer</a>
       </li>
     </ul>
     <div className={classes.userInfo}>

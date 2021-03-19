@@ -1,4 +1,4 @@
-import { GameData, Theme } from "./types";
+import { GameData, Theme, GameGenres } from "./types";
 import { assets } from "../../constants";
 
 export const games: GameData[] = [
@@ -7,7 +7,7 @@ export const games: GameData[] = [
     coverArtUrl: assets.codbo,
     playtime: 15190,
     progression: 31,
-    genre: ["action"],
+    genre: [GameGenres.action],
     title: "KingKiller",
     titleUrl: assets.target,
     wallpaperUrl: assets.codboWp,
@@ -19,7 +19,7 @@ export const games: GameData[] = [
     coverArtUrl: assets.ghost,
     playtime: 35190,
     progression: 62,
-    genre: ["action", "adventure"],
+    genre: [GameGenres.action, GameGenres.adventure],
     title: "Ronin",
     titleUrl: assets.buddah,
     wallpaperUrl: assets.ghostWp,
@@ -31,7 +31,7 @@ export const games: GameData[] = [
     coverArtUrl: assets.gow,
     playtime: 55190,
     progression: 80,
-    genre: ["action", "adventure"],
+    genre: [GameGenres.action, GameGenres.adventure],
     title: "God Slayer",
     titleUrl: assets.skull,
     wallpaperUrl: assets.gowWp,
@@ -43,7 +43,7 @@ export const games: GameData[] = [
     coverArtUrl: assets.witcher,
     playtime: 45190,
     progression: 77,
-    genre: ["action", "adventure", "puzzle"],
+    genre: [GameGenres.action, GameGenres.adventure, GameGenres.puzzle],
     title: "Wolfblood",
     titleUrl: assets.wolf,
     wallpaperUrl: assets.witcherWp,
@@ -55,7 +55,7 @@ export const games: GameData[] = [
     coverArtUrl: assets.naruto,
     playtime: 75190,
     progression: 90,
-    genre: ["action", "adventure"],
+    genre: [GameGenres.action, GameGenres.adventure],
     title: "Anbu",
     titleUrl: assets.anbu,
     wallpaperUrl: assets.narutoWp,

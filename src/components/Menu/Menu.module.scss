@@ -1,46 +1,35 @@
 .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    font-family: monsterrat-bold;
-    width: var(--width);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  font-family: monsterrat-bold;
+  width: var(--width);
 }
 
 .menu {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.back, .forward {
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
+.back,
+.forward {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
 }
 
 .back {
-    margin-right: 24px;
+  margin-right: 24px;
 }
 
 .forward {
-    margin-left: 24px;
-}
-
-.menuItem {
-    box-sizing: border-box;
-    background-color: transparent;
-    border: none;
-    margin: 0;
-    color: inherit;
-    font-size: 14px;
-    cursor: pointer;
-    color: #B2B2B2;
-    width: 110px;
+  margin-left: 24px;
 }
 
 .heading {
-    margin: 32px 0;
+  margin: 32px 0;
 }
