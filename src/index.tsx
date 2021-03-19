@@ -24,7 +24,7 @@ const showContent = (noFetch?: boolean) => {
     const body = document.querySelector("body");
     loader!.style.opacity = "0";
     setTimeout(() => {
-      body!.style.overflowY = "scroll";
+      body!.style.overflowY = "auto";
       loader!.style.display = "none";
     }, 300);
   };
