@@ -10,19 +10,18 @@ const Navigation: React.FC = () => (
     <Logo />
     <ul className={classes.links}>
       <li>
-        <a href="/">Home</a>
+        <a href="https://github.com/AkinAguda/playstation">Github</a>
       </li>
       <li>
-        <a href="/">Games</a>
+        <a href="https://www.figma.com/file/vK56OHD8iAt9khI2h80mZl/forAkin">
+          UI
+        </a>
       </li>
       <li>
-        <a href="/">Trophies</a>
+        <a href="https://github.com/AkinAguda">Developer</a>
       </li>
       <li>
-        <a href="/">Favourites</a>
-      </li>
-      <li>
-        <a href="/">Shop</a>
+        <a href="/">Designer</a>
       </li>
     </ul>
     <div className={classes.userInfo}>
