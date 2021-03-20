@@ -29,6 +29,15 @@
       body {
         overflow-y: hidden;
       }
+      @media (max-width: 768px) {
+        #root {
+          display: none;
+        }
+        #mobile {
+          display: flex !important;
+          flex-direction: column;
+        }
+      }
       @keyframes rotateAnimation {
         0% {
           transform: rotate(0) scale(1)
@@ -42,6 +51,15 @@
         100% {
           transform: rotate(0) scale(1)
         }
+      }
+
+      #mobile {
+        height: 100vh;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        background-color: #006FCD;
       }
 
       #triangle svg {
@@ -91,6 +109,12 @@
       #wrapper div svg {
         width: 70%;
       }
+      .loader-text {
+        color: white;
+        font-family: sans-serif;
+        letter-spacing: 1px;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
@@ -112,9 +136,13 @@
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 113 113"><defs/><path fill="#FFF" d="M113 0v113H0V0h113zm-12 12H12v89h89V12z"/></svg>
             </div>
           </div>
-          <p style="color: white; font-family: sans-serif; letter-spacing: 1px; margin-bottom: 0px;">First time load... This might take a while</p>
-          <p style="color: white; font-family: sans-serif; letter-spacing: 1px; margin-top: 5px;"><b>Tip: Use Arrow keys!</b></p>
+          <p class="loader-text" style="margin-bottom: 0px;">First time load... This might take a while</p>
+          <p class="loader-text" style="margin-top: 5px;"><b>Tip: Use Arrow keys!</b></p>
         </div>
+    </div>
+    <div id="mobile">
+      <p class="loader-text" style="margin-bottom: 0px;">Well this is awkward😹</p>
+      <p class="loader-text" style="margin-top: 5px;"><b>Can you please view on your desktop to get the best experience 😅</b></p>
     </div>
     <div id="root" style="overflow-x: hidden;"></div>
     <!--
