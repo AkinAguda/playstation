@@ -35,4 +35,10 @@ export const assets = {
   anbu: "images/anbu.png",
   narutoWp: "images/naruto-wp.jpg",
   narutoAudio: "audio/naruto.mp3",
+
+  //Horizon
+  horizon: "images/horizon.jpg",
+  bCrown: "images/bCrown.png",
+  horizonWp: "images/horizon-wp.jpg",
+  horizonAudio: "audio/horizon.mp3",
 };

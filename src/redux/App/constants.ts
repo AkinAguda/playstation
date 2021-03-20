@@ -27,6 +27,18 @@ export const games: GameData[] = [
     audioUrl: assets.ghostAudio,
   },
   {
+    name: "Horizon Zero Dawn",
+    coverArtUrl: assets.horizon,
+    playtime: 35190,
+    progression: 49,
+    genre: [GameGenres.adventure],
+    title: "Queen of Wanderers",
+    titleUrl: assets.bCrown,
+    wallpaperUrl: assets.horizonWp,
+    theme: Theme.DARK,
+    audioUrl: assets.horizonAudio,
+  },
+  {
     name: "God of War",
     coverArtUrl: assets.gow,
     playtime: 55190,
