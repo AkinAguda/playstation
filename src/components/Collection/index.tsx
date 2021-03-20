@@ -42,6 +42,19 @@ const CollectionContainer: React.FC = () => {
     onNavMove,
   ]);
 
+  useEffect(() => {
+    // This solves the problem were the scroll distance is not in line with the selected game when games are filtered
+    if (carouselInstance.carouselData) {
+      const transformDist =
+        carouselInstance.carouselData?.transformCount.current;
+      if (selectedIndex !== transformDist) {
+        for (let i = 0; i < transformDist; i++) {
+          carouselInstance.carouselData?.scrollLeft();
+        }
+      }
+    }
+  }, [selectedIndex, carouselInstance]);
+
   return (
     <Collection
       carouselInstance={carouselInstance}

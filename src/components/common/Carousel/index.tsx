@@ -66,6 +66,7 @@ const CarouselContainer: React.FC<CarouselProps> = ({
       carouselInstance.setCarouselData({
         scrollRight,
         scrollLeft,
+        transformCount,
       });
     }
   }, [carouselInstance, scrollRight, scrollLeft]);

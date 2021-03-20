@@ -27,6 +27,7 @@ export interface CarouselProps {
 export interface CarouselData {
   scrollRight: (step?: number) => void;
   scrollLeft: (step?: number) => void;
+  transformCount: React.MutableRefObject<number>;
 }
 
 export interface UseCarouselType {
