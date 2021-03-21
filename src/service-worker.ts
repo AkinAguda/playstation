@@ -13,7 +13,7 @@ import { ExpirationPlugin } from "workbox-expiration";
 import { precacheAndRoute, createHandlerBoundToURL } from "workbox-precaching";
 import { registerRoute } from "workbox-routing";
 import { StaleWhileRevalidate } from "workbox-strategies";
-import { assets } from "./constants";
+import { essnetialAssets } from "./constants";
 
 declare const self: ServiceWorkerGlobalScope;
 
@@ -28,7 +28,7 @@ precacheAndRoute(self.__WB_MANIFEST);
 //   url,
 //   revision: null,
 // }));
-precacheAndRoute(Object.values(assets));
+precacheAndRoute(essnetialAssets);
 
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
