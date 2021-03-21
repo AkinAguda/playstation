@@ -11,7 +11,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 // import * as serviceWorker from "./service-worker.js";
-import { fetchEssentialAssets } from "./helpers";
+import { fetchEssentialAssets, fetchAllAssets } from "./helpers";
 
 import rootReducer from "./redux";
 
@@ -28,7 +28,13 @@ const showContent = (noFetch?: boolean) => {
       loader!.style.display = "none";
     }, 300);
   };
-  if (!noFetch) fetchEssentialAssets().then(hideLoader).catch(hideLoader);
+  if (!noFetch)
+    fetchEssentialAssets()
+      .then(() => {
+        hideLoader();
+        fetchAllAssets();
+      })
+      .catch(hideLoader);
   if (noFetch) hideLoader();
 };
 

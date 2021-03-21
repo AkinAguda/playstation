@@ -39,6 +39,9 @@ export const secondsToHms = (d: number) => {
 export const fetchEssentialAssets = () =>
   Promise.all(essnetialAssets.map((url) => fetch(url)));
 
+export const fetchAllAssets = () =>
+  Promise.all(Object.values(assets).map((url) => fetch(url)));
+
 export const pageLoading = () =>
   !(
     window.getComputedStyle(document.getElementById("loader")!).display ===
