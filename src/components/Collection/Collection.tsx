@@ -8,11 +8,13 @@ const Collection: React.FC<CollectionViewProps> = ({
   carouselInstance,
   games,
   selectedINdex,
+  cardStyles,
+  cardImgStyles,
 }) => (
   <div className={classes.container}>
     <Carousel
       carouselInstance={carouselInstance}
-      itemWidth={270}
+      itemWidth={cardStyles.width ? Number(cardStyles.width) : 270}
       showClipped={true}
     >
       {games.map(({ coverArtUrl, name }, index) => (
@@ -23,8 +25,8 @@ const Collection: React.FC<CollectionViewProps> = ({
           ])}
           key={name}
         >
-          <button className={classes.gameTrigger}>
-            <img src={coverArtUrl} alt={name} />
+          <button className={classes.gameTrigger} style={cardStyles}>
+            <img src={coverArtUrl} alt={name} style={cardImgStyles} />
           </button>
         </div>
       ))}

@@ -3,7 +3,6 @@
   margin: 0 auto;
   width: var(--width);
   padding-bottom: 100px;
-  margin-top: 15px;
 }
 
 .gameWrapper {
@@ -13,12 +12,13 @@
 .gameTrigger {
   $width: 270px;
   $height: 250px;
+  $padding: 20px;
   width: $width;
   height: $height;
   border: none;
   background-color: transparent;
   border-radius: 20px;
-  padding: 0 20px;
+  padding: 0 $padding;
   box-sizing: border-box;
   cursor: pointer;
   &:focus {
@@ -28,8 +28,8 @@
     border: none;
   }
   img {
-    height: 250px;
-    width: 230px;
+    height: $height;
+    width: $width - (2 * $padding);
     border-radius: 20px;
   }
 }
