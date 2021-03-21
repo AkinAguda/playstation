@@ -1,12 +1,25 @@
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
   width: var(--width);
   padding-bottom: 100px;
+  margin-top: 120px;
+}
+
+.appear {
+  animation: appear 0.3s;
 }
 
 .gameWrapper {
-  margin-top: 120px;
 }
 
 .gameTrigger {

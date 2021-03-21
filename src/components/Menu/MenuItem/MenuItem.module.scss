@@ -8,6 +8,9 @@
   cursor: pointer;
   color: #b2b2b2;
   width: 110px;
+  &:focus {
+    outline: none;
+  }
 }
 
 .active {
