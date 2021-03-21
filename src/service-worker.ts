@@ -28,7 +28,11 @@ precacheAndRoute(self.__WB_MANIFEST);
 //   url,
 //   revision: null,
 // }));
-precacheAndRoute(essnetialAssets);
+precacheAndRoute(
+  essnetialAssets.map((url) => {
+    return { url };
+  })
+);
 
 // Set up App Shell-style routing, so that all navigation requests
 // are fulfilled with your index.html shell. Learn more at
