@@ -11,7 +11,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 // import * as serviceWorker from "./service-worker.js";
-import { fetchStaticFiles } from "./helpers";
+import { fetchEssentialAssets } from "./helpers";
 
 import rootReducer from "./redux";
 
@@ -28,7 +28,7 @@ const showContent = (noFetch?: boolean) => {
       loader!.style.display = "none";
     }, 300);
   };
-  if (!noFetch) fetchStaticFiles().then(hideLoader).catch(hideLoader);
+  if (!noFetch) fetchEssentialAssets().then(hideLoader).catch(hideLoader);
   if (noFetch) hideLoader();
 };
 

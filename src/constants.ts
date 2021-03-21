@@ -6,6 +6,7 @@ export const assets = {
   blades: "/images/blades.png",
 
   // collection assets
+  collectionAudio: "/audio/navigation.mp3",
   // COD
   codbo: "images/codbo.jpg",
   target: "images/target.png",
@@ -42,3 +43,11 @@ export const assets = {
   horizonWp: "images/horizon-wp.jpg",
   horizonAudio: "audio/horizon.mp3",
 };
+
+export const essnetialAssets = [
+  assets.collectionAudio,
+  assets.ghost,
+  assets.ghostAudio,
+  assets.ghostWp,
+  assets.buddah,
+];

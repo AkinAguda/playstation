@@ -1,4 +1,4 @@
-import { assets } from "./constants";
+import { assets, essnetialAssets } from "./constants";
 
 /**
  * This function allows you to combine sevral classNames together.
@@ -20,7 +20,7 @@ export const mergeClasses = (...args: any) => {
 };
 
 export const playNavigationAudio = () => {
-  const navAudio = new Audio("/audio/navigation.mp3");
+  const navAudio = new Audio(assets.collectionAudio);
   navAudio.play();
 };
 
@@ -36,8 +36,8 @@ export const secondsToHms = (d: number) => {
   return hDisplay + mDisplay + sDisplay;
 };
 
-export const fetchStaticFiles = () =>
-  Promise.all(Object.values(assets).map((url) => fetch(url)));
+export const fetchEssentialAssets = () =>
+  Promise.all(essnetialAssets.map((url) => fetch(url)));
 
 export const pageLoading = () =>
   !(
