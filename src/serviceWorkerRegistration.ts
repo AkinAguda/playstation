@@ -71,6 +71,7 @@ function registerValidSW(swUrl: string, config?: Config) {
         if (installingWorker == null) {
           return;
         }
+
         installingWorker.onstatechange = () => {
           if (installingWorker.state === "installed") {
             if (navigator.serviceWorker.controller) {
@@ -103,6 +104,7 @@ function registerValidSW(swUrl: string, config?: Config) {
     })
     .catch((error) => {
       console.error("Error during service worker registration:", error);
+      if (config && config.onNoSw) config.onNoSw();
     });
 }
 
