@@ -1,9 +1,9 @@
-import React, { useEffect, useCallback, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useCarousel } from "../common/Carousel";
 import { ApplicationStore } from "../../redux/types";
 import { setSelectedIndex } from "../../redux/App/actionCreators";
-import { playNavigationAudio, pageLoading } from "../../helpers";
+import { pageLoading } from "../../helpers";
 import Collection from "./Collection";
 
 const CollectionContainer: React.FC = () => {
@@ -15,23 +15,21 @@ const CollectionContainer: React.FC = () => {
 
   const dispatch = useDispatch();
 
-  const onNavMove = useCallback(() => {
-    playNavigationAudio();
-  }, []);
+
 
   useEffect(() => {
     document.onkeydown = (e) => {
       if (!pageLoading()) {
         if (e.key === "ArrowRight") {
-          if (selectedIndex + 1 !== games.length)
+          if (selectedIndex + 1 !== games.length) {
             dispatch(setSelectedIndex(selectedIndex + 1));
-          carouselInstance.carouselData?.scrollRight();
-          onNavMove();
+            carouselInstance.carouselData?.scrollRight();
+          }
         } else if (e.key === "ArrowLeft") {
-          if (selectedIndex !== 0)
+          if (selectedIndex !== 0) {
             dispatch(setSelectedIndex(selectedIndex - 1));
-          carouselInstance.carouselData?.scrollLeft();
-          onNavMove();
+            carouselInstance.carouselData?.scrollLeft();
+          }
         }
       }
     };
@@ -40,7 +38,7 @@ const CollectionContainer: React.FC = () => {
     carouselInstance.carouselData,
     games.length,
     dispatch,
-    onNavMove,
+    games
   ]);
 
   useEffect(() => {
