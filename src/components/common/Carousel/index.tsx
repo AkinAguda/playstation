@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { CarouselProps, RefType, CarouselData } from "./types";
 import Carousel from "./Carousel";
+import { playNavigationAudio } from './../../../helpers'
 
 export const useCarousel = () => {
   const [carouselData, setCarouselData] = useState<CarouselData | null>(null);
@@ -31,15 +32,20 @@ const CarouselContainer: React.FC<CarouselProps> = ({
     React.Children.map(children, () => createRef())
   );
 
+  const onNavMove = useCallback(() => {
+    playNavigationAudio();
+  }, []);
+
   const scrollRight = useCallback(
     (step = 1) => {
       if (transformCount.current < refs.length - numberToShow) {
         transform.current = transform.current + step * itemWidth;
         containerRef.current!.style.transform = `translateX(-${transform.current}px)`;
         transformCount.current += 1;
+        onNavMove();
       }
     },
-    [itemWidth, transform, refs.length, numberToShow]
+    [itemWidth, transform, numberToShow, onNavMove, refs]
   );
 
   const scrollLeft = useCallback(
@@ -48,9 +54,10 @@ const CarouselContainer: React.FC<CarouselProps> = ({
         transform.current = transform.current - step * itemWidth;
         containerRef.current!.style.transform = `translateX(-${transform.current}px)`;
         transformCount.current -= 1;
+        onNavMove();
       }
     },
-    [itemWidth, transform]
+    [itemWidth, transform, onNavMove]
   );
 
   useEffect(() => {
